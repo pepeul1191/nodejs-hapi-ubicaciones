@@ -35,28 +35,24 @@ def guardar
           :nuevos => [
             {
               :id => 'tablaDepartamento_481',
-              :nombre => 'Departameñtó N1',  
-              :pais_id => 1,
+              :nombre => 'Departameñtó N1',
             },
             {
               :id => 'tablaDepartamento_482',
-              :nombre => 'Departameñtó N2',  
-              :pais_id => 1,
+              :nombre => 'Departameñtó N2',
             },
           ],
           :editados => [
             {
               :id => '1',
-              :nombre => 'Amazonasssss',  
-              :pais_id => 2,
+              :nombre => 'Amazonas',
             },
             {
               :id => '2',
-              :nombre => 'Ancsjjjj',  
-              :pais_id => 2,
+              :nombre => 'Ancash',
             },
-          ],  
-          :eliminados => [7],
+          ],
+          :eliminados => [],
           :extra => {
             :campo_id => 20
           }
@@ -64,6 +60,7 @@ def guardar
         url = 'departamento/guardar?data=' + data
         test = App.new(url)
         test.post()
+        puts test.response.body
         expect(test.response.code).to eq(200)
         expect(test.response.body).not_to include('error')
         expect(test.response.body).to include('Se ha registrado los cambios en los departamentos')
