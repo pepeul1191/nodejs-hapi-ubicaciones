@@ -45,11 +45,11 @@ def guardar
           :editados => [
             {
               :id => '1',
-              :nombre => 'Amazonas',
+              :nombre => 'Amazonash',
             },
             {
               :id => '2',
-              :nombre => 'Ancash',
+              :nombre => 'Ancashhh',
             },
           ],
           :eliminados => [],

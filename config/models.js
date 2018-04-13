@@ -31,6 +31,7 @@ const DistritoProvinciaDepartamento = db.define('vw_distrito_provincia_departame
 
 exports.op = Op;
 exports.db = db;
+exports.sequelize = Sequelize;
 exports.Departamento = Departamento;
 exports.Provincia = Provincia;
 exports.Distrito = Distrito;
