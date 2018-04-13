@@ -7,7 +7,7 @@ const Departamento = db.define('departamentos', {
 	nombre: { type: Sequelize.STRING, allowNull: false,  },
 });
 
-const Provincia = db.define('usuarios', {
+const Provincia = db.define('provincias', {
 	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
 	nombre: { type: Sequelize.STRING },
 	departamento_id: { type: Sequelize.INTEGER, references: {
