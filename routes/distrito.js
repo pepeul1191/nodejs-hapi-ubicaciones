@@ -4,25 +4,25 @@ var models = require('../config/models');
 module.exports = [
   {
     method: 'GET',
-    path: 'listar/{departamento_id}',
+    path: 'listar/{provincia_id}',
     config: {
       auth: false,
       pre: [
       ],
     },
     handler: function(request, reply) {
-      models.Provincia.findAll({
+      models.Distrito.findAll({
         attributes: ['id', 'nombre'],
         where: {
-          departamento_id : request.params.departamento_id
+          provincia_id : request.params.provincia_id
         },
-      }).then(function(provincias) {
-        reply(JSON.stringify(provincias));
+      }).then(function(distritos) {
+        reply(JSON.stringify(distritos));
       }).catch((err) => {
         var rpta = {
           'tipo_mensaje': 'error',
           'mensaje': [
-            'Se ha producido un error en listar las provincias del departamento',
+            'Se ha producido un error en listar los distritos de la provincia',
             err.toString()
           ]
         }
