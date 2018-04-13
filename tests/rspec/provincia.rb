@@ -35,35 +35,32 @@ def guardar
           :nuevos => [
             {
               :id => 'tablaDepartamento_481',
-              :nombre => 'Departameñtó N1',  
-              :departamento_id => 1,
+              :nombre => 'Departameñtó N1',
             },
             {
               :id => 'tablaDepartamento_482',
-              :nombre => 'Departameñtó N2',  
-              :departamento_id => 1,
+              :nombre => 'Departameñtó N2',
             },
           ],
           :editados => [
             {
-              :id => '1',
-              :nombre => 'Amazonasssss',  
-              :departamento_id => 2,
+              :id => '195',
+              :nombre => 'Amazonasssss',
             },
             {
-              :id => '2',
-              :nombre => 'Ancsjjjj',  
-              :departamento_id => 2,
+              :id => '196',
+              :nombre => 'Ancsjjjj',
             },
-          ],  
-          :eliminados => [7],
+          ],
+          :eliminados => [197,198],
           :extra => {
-            :campo_id => 20
+            :departamento_id => 20
           }
         }.to_json
         url = 'provincia/guardar?data=' + data
         test = App.new(url)
         test.post()
+        puts test.response.body
         expect(test.response.code).to eq(200)
         expect(test.response.body).not_to include('error')
         expect(test.response.body).to include('Se ha registrado los cambios en las provincias')
