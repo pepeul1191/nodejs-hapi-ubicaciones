@@ -35,30 +35,30 @@ def guardar
           :nuevos => [
             {
               :id => 'tablaDepartamento_481',
-              :nombre => 'Departameñtó N1',  
+              :nombre => 'Departameñtó N1',
               :provincia_id => 1,
             },
             {
               :id => 'tablaDepartamento_482',
-              :nombre => 'Departameñtó N2',  
+              :nombre => 'Departameñtó N2',
               :provincia_id => 1,
             },
           ],
           :editados => [
             {
               :id => '1',
-              :nombre => 'Amazonasssss',  
+              :nombre => 'Amazonasssss',
               :provincia_id => 2,
             },
             {
               :id => '2',
-              :nombre => 'Ancsjjjj',  
+              :nombre => 'Ancsjjjj',
               :provincia_id => 2,
             },
-          ],  
+          ],
           :eliminados => [7],
           :extra => {
-            :campo_id => 20
+            :provincia_id => 20
           }
         }.to_json
         url = 'distrito/guardar?data=' + data

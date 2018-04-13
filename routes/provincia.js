@@ -71,7 +71,10 @@ module.exports = [
           var promises = [];
           var i = 0;
           nuevos_promises.forEach(function(promise){
-            var temp = {'temporal': nuevos[i]['id'] ,'nuevo_id': promise['id']};
+            var temp = {
+              'temporal': nuevos[i]['id'] ,
+              'nuevo_id': promise['id']
+            };
             promises.push(temp);
             i = i + 1;
           });
@@ -81,7 +84,7 @@ module.exports = [
         var rpta = {
           'tipo_mensaje': 'success',
           'mensaje': [
-            "Se ha registrado los cambios en las provincias", result
+            'Se ha registrado los cambios en las provincias', result
           ]
         };
         reply(JSON.stringify(rpta));
