@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 var database = require('./database');
 var db = database.db;
+const Op = Sequelize.Op;
 
 const Departamento = db.define('departamentos', {
 	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
@@ -23,13 +24,14 @@ const Distrito = db.define('distritos', {
 	}},
 });
 
-//const DistritoProvinciaDepartamento = db.define('vw_distrito_provincia_departamento', {
-	//id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
-	//nombre: { type: Sequelize.STRING },
-//});
+const DistritoProvinciaDepartamento = db.define('vw_distrito_provincia_departamento', {
+	id: { type: Sequelize.INTEGER, primaryKey: true, autoIncrement: true },
+	nombre: { type: Sequelize.TEXT },
+});
 
+exports.op = Op;
 exports.db = db;
 exports.Departamento = Departamento;
 exports.Provincia = Provincia;
 exports.Distrito = Distrito;
-//exports.DistritoProvinciaDepartamento = DistritoProvinciaDepartamento;
+exports.DistritoProvinciaDepartamento = DistritoProvinciaDepartamento;

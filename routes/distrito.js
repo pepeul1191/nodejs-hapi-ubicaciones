@@ -30,4 +30,35 @@ module.exports = [
       });
     }
   },
+  {
+    method: 'GET',
+    path: 'buscar',
+    config: {
+      auth: false,
+      pre: [
+      ],
+    },
+    handler: function(request, reply) {
+      models.DistritoProvinciaDepartamento.findAll({
+        attributes: ['id', 'nombre'],
+        where: {
+          nombre : {
+            $like: request.query.nombre + '%'
+          }
+        },
+        limit: 10,
+      }).then(function(distritos) {
+        reply(JSON.stringify(distritos));
+      }).catch((err) => {
+        var rpta = {
+          'tipo_mensaje': 'error',
+          'mensaje': [
+            'Se ha producido un error en buscar los distritos',
+            err.toString()
+          ]
+        }
+        reply(JSON.stringify(rpta)).code(500);
+      });
+    }
+  },
 ]
